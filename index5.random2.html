@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+        background-image: linear-gradient(35deg, rgb(79, 74, 74), rgb(44, 40, 40), rgb(90, 85, 85) );
+        width: 100%;
+        height: 100vh;
+
+        }
+        .door{
+            width: 250px;
+            height: 250px;
+            margin: 250px auto;
+            
+        }
+        #box{
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid black; */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 1s;
+            cursor: pointer;
+            
+        }
+        
+        #box>div{
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+            border-radius: 60px;
+            position: absolute;
+            top: 0;left: 0;
+            background-color: white;
+            
+        }
+        /* #box:hover{
+            transform: rotate3d(3, 5, 6, 600deg)
+
+        } */
+        #box>div:nth-of-type(1){
+            transform: translatez(125px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        #box>div:nth-of-type(2){
+            transform: translateZ(-125px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;  
+        }
+        #box>div:nth-of-type(3){
+            transform: translateZ(125px) rotateY(-90deg);
+            transform-origin: right;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;  
+            position: relative;
+        }
+        #box>div:nth-of-type(4){
+            transform: translateZ(-125px) rotateY(-90deg);
+            transform-origin: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        #box>div:nth-of-type(5){
+            transform: translateZ(125px) rotateX(90deg);
+            transform-origin: bottom;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        #box>div:nth-of-type(6){
+            transform: translateZ(-125px) rotateX(90deg);
+            transform-origin: top;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        #box>div:nth-of-type(1)>span{
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+        }
+        #box>div:nth-of-type(2)>span{
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+        }
+    #box>div:nth-of-type(3)>span:nth-of-type(1){
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+            position: absolute;
+            top: 10px;left: 10px;
+            
+        }
+        #box>div:nth-of-type(3)>span:nth-of-type(2){
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+            position: absolute;
+            top: 80px;left: 80px;
+            
+        }
+        #box>div:nth-of-type(3)>span:nth-of-type(3){
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+            position: absolute;
+            top: 145px;left: 160px;
+            
+        }
+        #box>div:nth-of-type(4)>span{
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+        }
+        #box>div:nth-of-type(5)>span{
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+        }
+        #box>div:nth-of-type(6)>span{
+            display: block;
+            width: 30%;
+            height: 30%;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: black;
+            margin: 5px;
+            transform: rotateX(30deg);
+        }
+    </style>
+</head>
+<body>
+    <section class="door">
+        <div id="box">
+                <div>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        </div>
+    </section>
+</body>
+<script>
+    let _select= document.getElementById('box')
+    let num=['30deg','-60deg','90deg','-90deg','-120deg','150deg','-150deg','-180deg','1800deg','270deg','-270deg','-300deg','300deg','360deg','-360deg']
+    _select.addEventListener('click',
+    function result(){
+        _select.style.transform='rotate3d(1,1,1,'+num[parseInt((Math.random())*num.length)]+')'
+        // _select.style.transform=console.log('rotate3d(1,1,1,'+num[parseInt((Math.random())*num.length)]+')')
+    })
+
+</script>
+</html>
